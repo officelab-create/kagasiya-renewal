@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ ＆ セキュリティ体制 | 株式会社かがし屋</title>
+  <meta name="description" content="株式会社かがし屋へのお問い合わせフォームです。ご入力内容はSSL暗号化通信およびWAF（Web Application Firewall）による24時間攻撃遮断システムにより完全に保護されています。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER (Glassmorphism Nav)
+       ========================================================================== -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="logo" id="header-logo">
+        <div class="logo__mark">K</div>
+        <div class="logo__text">
+          <span class="logo__name">かがし屋</span>
+          <span class="logo__sub">KAGASIYA GROUP</span>
+        </div>
+      </a>
+      
+      <nav class="nav" id="global-nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">ホーム</a></li>
+          <li class="nav__item"><a href="office.html" class="nav__link">オフィスDX</a></li>
+          <li class="nav__item"><a href="stationery.html" class="nav__link">文具・ショップ</a></li>
+          <li class="nav__item"><a href="docomo.html" class="nav__link">ドコモ通信</a></li>
+          <li class="nav__item"><a href="food.html" class="nav__link">フードサービス</a></li>
+          <li class="nav__item"><a href="others.html" class="nav__link">その他事業</a></li>
+          <li class="nav__item"><a href="recruit.html" class="nav__link">採用情報</a></li>
+        </ul>
+        <a href="contact.html" class="header__btn active" id="nav-contact-btn">
+          <span>お問い合わせ</span>
+          <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </nav>
+
+      <div class="burger" id="burger-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       SUBPAGE HERO — bright gradient instead of dark SVG
+       ========================================================================== -->
+  <section class="page-hero" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
+    <div class="page-hero__content fade-in">
+      <h1 class="page-hero__title">お問い合わせ</h1>
+      <span class="page-hero__subtitle">CONTACT &amp; SECURE ENVIRONMENT</span>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BREADCRUMB
+       ========================================================================== -->
+  <div class="breadcrumb">
+    <div class="container">
+      <ul class="breadcrumb__list">
+        <li class="breadcrumb__item"><a href="index.html">ホーム</a></li>
+        <li class="breadcrumb__item active">お問い合わせ</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CONTACT FORM & SECURITY INFO LAYOUT
+       ========================================================================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- Form Panel -->
+        <div class="contact-form-container fade-in">
+          <h2 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 24px; border-left: 4px solid var(--secondary); padding-left: 12px;">お問い合わせフォーム</h2>
+          
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="comp-name">貴社名 / 組織名</label>
+              <input type="text" class="form-control" id="comp-name" placeholder="例：株式会社かがし屋">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="user-name">お名前<span>必須</span></label>
+              <input type="text" class="form-control" id="user-name" required placeholder="例：山田 太郎">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="user-email">メールアドレス<span>必須</span></label>
+              <input type="email" class="form-control" id="user-email" required placeholder="例：yamada@example.com">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="user-tel">電話番号<span>必須</span></label>
+              <input type="tel" class="form-control" id="user-tel" required placeholder="例：090-1234-5678">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="req-type">お問い合わせ項目<span>必須</span></label>
+              <select class="form-control" id="req-type" required>
+                <option value="" disabled selected>選択してください</option>
+                <option value="office">オフィスソリューション・DX相談</option>
+                <option value="stationery">文房具・ショップ店舗関連</option>
+                <option value="docomo">ドコモ通信・法人モバイル導入</option>
+                <option value="food">フードサービス（セリオ予約など）</option>
+                <option value="recruit">採用エントリー・インターン見学</option>
+                <option value="other">その他のお問い合わせ</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="user-msg">お問い合わせ内容<span>必須</span></label>
+              <textarea class="form-control" id="user-msg" rows="6" required placeholder="お問い合わせ内容やご相談事項を詳しくご入力ください。"></textarea>
+            </div>
+
+            <div style="margin-bottom: 24px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; background: linear-gradient(135deg, rgba(0, 180, 216, 0.06), rgba(46, 196, 182, 0.06)); padding: 16px 20px; border-radius: var(--border-radius-md); border: 1px solid rgba(0, 180, 216, 0.15);">
+              🔒 <strong style="color: var(--primary);">データ暗号化と安全性保証:</strong> ご入力いただいた個人情報は、SSL/TLSによる高度な暗号化通信で保護され、WAF（ウェブ防御壁）システムによる常時監視下で安全に処理されます。第三者への漏洩等のリスクはありません。
+            </div>
+
+            <div style="text-align: center;">
+              <button type="submit" class="btn-primary" style="width: 100%; max-width: 300px;" id="form-submit-btn">
+                <span>安全な接続で送信する</span>
+                <svg class="arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Security Specifications Panel — brighter, more cheerful & trustworthy -->
+        <div class="security-showcase fade-in delay-200" id="security">
+          <div class="section-title" style="text-align: left; margin-bottom: 24px;">
+            <span class="section-title__sub">TRUST &amp; SECURITY</span>
+            <h2 class="section-title__main" style="padding-bottom: 12px; display: inline-block;">安全・セキュリティ体制</h2>
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.8; color: var(--text-main);">
+            かがし屋は、お客様からお預かりする大切な情報資産をサイバー脅威から守り、常に安心してWebサイトをご利用いただけるよう、業界最高基準のセキュリティ技術を標準適用しております。
+          </p>
+
+          <!-- SSL Card — bright teal accent -->
+          <div class="security-card" style="border-left: 4px solid var(--secondary); background: linear-gradient(135deg, rgba(0, 180, 216, 0.04), rgba(46, 196, 182, 0.04));">
+            <div class="security-card__icon" style="font-size: 2rem;">🔑</div>
+            <div class="security-card__content">
+              <h3 class="security-card__title" style="color: var(--primary);">1. 常時SSL/TLS通信（暗号化）</h3>
+              <p class="security-card__desc">当サイトのすべてのページは、業界標準の強固な暗号化鍵（TLS 1.3以降）を用いた常時HTTPS通信に完全対応しています。お問い合わせフォームで入力される「個人情報」「連絡先」「相談内容」はすべて強固に暗号化され、通信途中での盗聴やなりすまし・改ざん等のリスクを完全に排除します。</p>
+            </div>
+          </div>
+
+          <!-- WAF Card — bright blue accent -->
+          <div class="security-card" style="border-left: 4px solid var(--primary); background: linear-gradient(135deg, rgba(0, 102, 204, 0.04), rgba(0, 180, 216, 0.04));">
+            <div class="security-card__icon" style="font-size: 2rem;">🛡️</div>
+            <div class="security-card__content">
+              <h3 class="security-card__title" style="color: var(--primary);">2. 高性能 WAF（Web Application Firewall）</h3>
+              <p class="security-card__desc">当サーバーには、Webアプリケーションの脆弱性を狙う外部からの不正アクセスやサイバー攻撃をリアルタイムで検知・遮断する高性能WAF（ウェブ・アプリケーション・ファイアウォール）を導入しています。</p>
+              <div style="font-size: 0.8rem; background-color: var(--light); border: 1px solid rgba(0, 180, 216, 0.15); padding: 12px 16px; border-radius: var(--border-radius-sm); margin-top: 12px;">
+                <strong style="color: var(--secondary);">🛡️ 主な防御脅威対象例：</strong>
+                <ul style="list-style: disc; padding-left: 20px; margin-top: 6px; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px;">
+                  <li><strong>SQLインジェクション</strong>: データベースの破壊や情報流出の防止</li>
+                  <li><strong>XSS (クロスサイトスクリプティング)</strong>: 悪質なスクリプト埋め込み・偽装の遮断</li>
+                  <li><strong>不正アクセス / DoS攻撃</strong>: 不正な大量アクセスや自動書き込み防御</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MEGA FOOTER (Unified & Secure)
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo logo">
+            <div class="logo__mark">K</div>
+            <div class="logo__text">
+              <span class="logo__name">かがし屋</span>
+              <span class="logo__sub">KAGASIYA GROUP</span>
+            </div>
+          </a>
+          <p class="footer__desc">株式会社かがし屋は、うきは・福岡・久留米・大分を拠点とし、BtoBオフィスDXソリューション、ショップ運営、通信代理店、フードサービス等の多角事業を通じて、地域の暮らしと企業の発展を支える企業です。</p>
+          <div class="footer__sns">
+            <a href="#" class="footer__sns-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="footer__sns-link" aria-label="X (Twitter)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z M4 20l6.768 -6.768 M20 4l-6.768 6.768"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="footer__title">主要事業</h3>
+          <ul class="footer__menu-list">
+            <li><a href="office.html" class="footer__menu-link">オフィスDXソリューション</a></li>
+            <li><a href="stationery.html" class="footer__menu-link">文房具・ショップ</a></li>
+            <li><a href="docomo.html" class="footer__menu-link">ドコモ通信事業</a></li>
+            <li><a href="food.html" class="footer__menu-link">フードサービス</a></li>
+            <li><a href="others.html" class="footer__menu-link">その他の事業</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__title">企業情報</h3>
+          <ul class="footer__menu-list">
+            <li><a href="recruit.html" class="footer__menu-link">採用情報・スタッフ紹介</a></li>
+            <li><a href="recruit.html#workplace" class="footer__menu-link">新社屋・オフィスツアー</a></li>
+            <li><a href="contact.html" class="footer__menu-link">お問い合わせ</a></li>
+            <li><a href="contact.html#security" class="footer__menu-link">安全対策とセキュリティ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer__title">本社・事業所</h3>
+          <div class="footer__info">
+            <div class="footer__info-item">
+              <svg class="footer__info-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span><strong>うきは本社</strong><br>〒839-1321 福岡県うきは市吉井町193-7</span>
+            </div>
+            <div class="footer__info-item">
+              <svg class="footer__info-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span><strong>福岡本社</strong><br>〒812-0011 福岡市博多区博多駅前4丁目3-3</span>
+            </div>
+            <div class="footer__security">
+              <span class="footer__security-badge">WAF・SSL</span>
+              <span class="footer__security-text">当サイトはお客様の情報を守るため、SSL/TLS暗号化通信およびWAF（攻撃遮断システム）による万全のセキュリティ対策を標準適用しております。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; 2026 KAGASIYA Co., Ltd. All Rights Reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="contact.html#security" class="footer__bottom-link">セキュリティポリシー</a>
+          <a href="#" class="footer__bottom-link">個人情報保護方針</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
